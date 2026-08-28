@@ -1,0 +1,1 @@
+- [Windows desktop packaging](windows-desktop-packaging.md) — use a portable ZIP on Replit; finalize NSIS installers on Windows.

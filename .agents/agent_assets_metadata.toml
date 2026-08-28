@@ -1,0 +1,44 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "fHivyFUtgPNRT2UA-4MuU"
+uri = "file://artifacts/tabletop-command/release/Tabletop-Command-Center-Windows-x64.tar.xz"
+type = "unspecified"
+title = "Tabletop Command Center for Windows"
+description = "Portable offline Windows build. Extract with 7-Zip, open win-unpacked, and run Tabletop Command Center.exe. Connect a second display in Extended mode before launch."
+logical_id = "62993de7-ee22-4ebb-8521-20def0bac1a9"
+content_hash = "sha256:3ca1d664775becc9e1b856f245258617e968165a38d0fe076ee6f9e7e371e17d"
+size = 102769224
+mtime_ms = 1787884993218
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:7ecf74c7-cd53-4d8d-89ac-32c653abe6f1/62993de7-ee22-4ebb-8521-20def0bac1a9/5ace8ecb-61f3-4b08-820d-20100a081065"
+storage_version_token = "1787885011015356"
+content_type = "application/octet-stream"
+
+[[outputs]]
+id = "bzjqLVtECH1Cd0LNJB8Ui"
+uri = "file://artifacts/tabletop-command/release/Tabletop-Command-Center-Windows-x64.z01"
+type = "unspecified"
+title = "Tabletop Command Center — ZIP Part 1 of 2"
+description = "Split ZIP archive part 1 (90 MB). Keep this file beside the matching .zip file before extracting."
+logical_id = "e266bd31-9e21-49e2-8f71-c0ebd705345c"
+content_hash = "sha256:64a9db330ee79b0547e2e2bef46797cdb7d3469be72db8011f524f0a40526d75"
+size = 94371840
+mtime_ms = 1787885069899
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:7ecf74c7-cd53-4d8d-89ac-32c653abe6f1/e266bd31-9e21-49e2-8f71-c0ebd705345c/911fbe62-dec5-4b2d-bf84-119cf212273a"
+storage_version_token = "1787885085995316"
+content_type = "application/octet-stream"
+
+[[outputs]]
+id = "9u8lvYVCJi4WltxWw3hMh"
+uri = "file://artifacts/tabletop-command/release/Tabletop-Command-Center-Windows-x64.zip"
+type = "unspecified"
+title = "Tabletop Command Center — ZIP Part 2 of 2"
+description = "Split ZIP archive part 2 (48 MB). Keep this file beside the matching .z01 file before extracting."
+logical_id = "88ac55ec-9477-4894-9eab-8ab40d1b3ae3"
+content_hash = "sha256:99e83caa462f8df381973e56ff147558419e1d9cd57bace967511c38d34a6513"
+size = 49914185
+mtime_ms = 1787885069899
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:7ecf74c7-cd53-4d8d-89ac-32c653abe6f1/88ac55ec-9477-4894-9eab-8ab40d1b3ae3/b32b9374-b7f6-476c-be31-35d61115b205"
+storage_version_token = "1787885087200828"
+content_type = "application/octet-stream"

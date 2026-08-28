@@ -1,0 +1,22 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.tabletop.commandcenter
+productName: Tabletop Command Center
+files:
+  - filter:
+      - dist/public/**/*
+      - electron/**/*
+      - package.json
+electronLanguages:
+  - en-US
+  - en-CA
+asar: true
+win:
+  target: nsis
+  artifactName: Tabletop-Command-Center-${version}-Setup.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+electronVersion: 44.0.0

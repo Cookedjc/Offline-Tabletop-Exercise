@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Tabletop Command Center"
+description = "An offline-first cybersecurity tabletop exercise control center with a private moderator console, large room display mode, timed injects, fog-of-war information releases, alarms, team notes, and hot wash capture."
+version = "1.0.0"
+id = "artifacts/tabletop-command"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23073
+
+[services.development]
+run = "pnpm --filter @workspace/tabletop-command run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tabletop-command", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/tabletop-command/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23073"
+BASE_PATH = "/"
