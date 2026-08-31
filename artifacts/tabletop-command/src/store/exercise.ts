@@ -60,13 +60,23 @@ export const INITIAL_STATE: ExerciseState = {
   customMessage: null,
 };
 
+function parseStoredState(raw: string | null): ExerciseState {
+  if (!raw) return INITIAL_STATE;
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return INITIAL_STATE;
+    return { ...INITIAL_STATE, ...parsed };
+  } catch {
+    return INITIAL_STATE;
+  }
+}
+
 export function useExerciseStore() {
   const [state, setState] = useState<ExerciseState>(() => {
     try {
-      const item = window.localStorage.getItem('tabletop_state');
-      if (!item) return INITIAL_STATE;
-      return { ...INITIAL_STATE, ...JSON.parse(item) };
-    } catch (error) {
+      return parseStoredState(window.localStorage.getItem('tabletop_state'));
+    } catch {
       return INITIAL_STATE;
     }
   });
@@ -82,7 +92,7 @@ export function useExerciseStore() {
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'tabletop_state' && e.newValue) {
-        setState(JSON.parse(e.newValue));
+        setState(parseStoredState(e.newValue));
       }
     };
     window.addEventListener('storage', handleStorageChange);
