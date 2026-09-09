@@ -38,6 +38,34 @@
   --color-warning-foreground: hsl(var(--warning-foreground));
 }
 
+/* The moderator can intentionally switch the participant display into a
+   high-contrast red alert state without changing the moderator console. */
+.red-screen-mode {
+  background: #160000 !important;
+  color: #ff3030 !important;
+  filter: saturate(1.35);
+}
+
+.red-screen-mode,
+.red-screen-mode * {
+  color: #ff3030 !important;
+  border-color: #8f1d1d !important;
+  text-shadow: 0 0 12px rgba(255, 48, 48, 0.22);
+}
+
+.red-screen-mode [class*='bg-'] {
+  background-color: #2a0000 !important;
+}
+
+.red-screen-mode .text-muted-foreground,
+.red-screen-mode [class*='text-white\\/'] {
+  color: #ff8585 !important;
+}
+
+.red-screen-mode svg {
+  stroke: currentColor !important;
+}
+
 :root {
   --background: 224 71% 4%;
   --foreground: 213 31% 91%;

@@ -11,7 +11,7 @@ export default function Display() {
   );
 
   return (
-    <div className="relative min-h-screen bg-[#020617] text-foreground overflow-hidden font-sans selection:bg-primary/30">
+    <div className={`relative min-h-screen bg-[#020617] text-foreground overflow-hidden font-sans selection:bg-primary/30 ${state.effect === 'red-screen' ? 'red-screen-mode' : ''}`}>
       
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -75,6 +75,12 @@ export default function Display() {
       {/* Theatrical Overlays */}
       {state.effect === 'alarm' && (
         <div className="fixed inset-0 z-50 pointer-events-none animate-alarm mix-blend-screen" />
+      )}
+
+      {state.effect === 'red-screen' && (
+        <div className="fixed top-0 inset-x-0 z-50 pointer-events-none border-b-2 border-red-500 bg-red-950/90 py-3 text-center font-mono text-xl font-bold tracking-[0.35em] text-red-100">
+          RED ROOM MODE · SYSTEM ALERT
+        </div>
       )}
       
       {state.effect === 'wrong-assumption' && (

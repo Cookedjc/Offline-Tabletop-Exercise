@@ -59,7 +59,7 @@ export default function Console() {
         const audio = new AudioContext();
         const oscillator = audio.createOscillator();
         const gain = audio.createGain();
-        oscillator.frequency.value = effect === 'alarm' ? 440 : 180;
+        oscillator.frequency.value = effect === 'alarm' || effect === 'red-screen' ? 440 : 180;
         oscillator.type = 'square';
         gain.gain.setValueAtTime(0.04, audio.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 0.45);
@@ -226,6 +226,14 @@ export default function Console() {
                   >
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     RED ALERT
+                  </Button>
+                  <Button
+                    variant={state.effect === 'red-screen' ? 'destructive' : 'outline'}
+                    className={state.effect === 'red-screen' ? 'animate-pulse' : ''}
+                    onClick={() => handleEffect(state.effect === 'red-screen' ? 'none' : 'red-screen')}
+                  >
+                    <ShieldAlert className="w-4 h-4 mr-2" />
+                    RED ROOM MODE
                   </Button>
                   <Button 
                     variant={state.effect === 'wrong-assumption' ? 'warning' : 'outline'}

@@ -21,7 +21,7 @@ export interface HotWashItem {
   question?: string;
 }
 
-export type TheatricalEffect = 'none' | 'alarm' | 'wrong-assumption';
+export type TheatricalEffect = 'none' | 'alarm' | 'wrong-assumption' | 'red-screen';
 
 export interface ExerciseState {
   status: 'setup' | 'running' | 'paused' | 'completed';
